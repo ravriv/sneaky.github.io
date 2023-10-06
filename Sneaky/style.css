@@ -137,8 +137,6 @@ canvas::after {
     background-color: #ccc;
 }
 
-/* Add these styles to style.css */
-
 .you-win {
     position: absolute;
     top: 0;
@@ -149,7 +147,7 @@ canvas::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #008000; /* Change background color to green */
+    background-color: #008000;
     color: #fff;
     text-align: center;
     z-index: 1;
@@ -173,7 +171,7 @@ canvas::after {
 
 .you-win button {
     background-color: #fff;
-    color: #008000; /* Change text color to green */
+    color: #008000;
     border: none;
     padding: 10px 15px;
     font-size: 24px;
