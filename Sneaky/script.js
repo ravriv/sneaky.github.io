@@ -20,7 +20,7 @@ let gameover = false;
 let endgame = false;
 let eaten = true;
 let score = 0;
-const maxscore = 3;
+const maxscore = 400;
 
 function getRandomPosition(exclude) {
   let x, y;
