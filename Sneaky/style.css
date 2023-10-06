@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    color: #ddd;
+    font: 16px/1.5 var(--font);
+    letter-spacing: 0.1em;
+    text-shadow: var(--text-shadow);
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 20px;
+}
+
+body::after {
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+canvas {
+    position: relative;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    background-color: black;
+}
+
+canvas::before,
+canvas::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15));
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    z-index: -1;
+}
+
+.arrow-buttons {
+    margin-top: 10px;
+}
+
+.arrow-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.arrow-button:hover {
+    transform: scale(1.1);
+    animation: grayGlow 1s infinite;
+}
+
+@keyframes grayGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(192, 192, 192, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(192, 192, 192, 0.9);
+    }
+}
+
+.game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #8B0000;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    display: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.game-over h1 {
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 48px;
+}
+
+.game-over .subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.game-over button {
+    background-color: #fff;
+    color: #8B0000;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.game-over button:hover {
+    background-color: #ccc;
+}
+
+/* Add these styles to style.css */
+
+.you-win {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #008000; /* Change background color to green */
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    display: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.you-win h1 {
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 48px;
+}
+
+.you-win .subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.you-win button {
+    background-color: #fff;
+    color: #008000; /* Change text color to green */
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.you-win button:hover {
+    background-color: #ccc;
+}
