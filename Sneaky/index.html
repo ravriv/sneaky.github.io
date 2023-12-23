@@ -44,7 +44,7 @@
     }
    }
 
-   .start-button {
+   .play-button {
     background-color: #ff6600;
     color: #fff;
     border: none;
@@ -55,7 +55,7 @@
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
    }
 
-   .start-button:hover {
+   .play-button:hover {
     background-color: #ff4500;
     transform: scale(1.1);
     box-shadow: 0 0 100px rgba(255, 152, 0, 1);
@@ -65,12 +65,12 @@
  <body>
   <div class="menu">
    <h1>Sneaky Game</h1>
-   <button class="start-button">Start</button>
+   <button class="play-button">Play</button>
   </div>
   <script type="text/javascript">
-   const startButton = document.querySelector(".start-button");
+   const playButton = document.querySelector(".play-button");
    const startSound = new Audio("sounds/start.ogg");
-   startButton.addEventListener("click", () => {
+   playButton.addEventListener("click", () => {
     startSound.play();
     setTimeout(() => {
      window.location.href = "game.html";
