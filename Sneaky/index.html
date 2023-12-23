@@ -1,118 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+ <head>
   <title>Sneaky Game</title>
   <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+   body {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   }
+
+   .menu {
+    max-width: 600px;
+    background-color: #333;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+   }
+
+   h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    animation: glowing 2s infinite;
+   }
+
+   @keyframes glowing {
+    0% {
+     text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
     }
 
-    .menu {
-      max-width: 600px;
-      background-color: #333;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    50% {
+     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
 
-    h1 {
-      font-size: 64px;
-      margin-bottom: 20px;
-      animation: glowing 2s infinite;
+    100% {
+     text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
     }
+   }
 
-    @keyframes glowing {
-      0% {
-        text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
-      }
+   .start-button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+   }
 
-      50% {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-      }
-
-      100% {
-        text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
-      }
-    }
-
-    .start-button {
-      background-color: #ff6600;
-      color: #fff;
-      border: none;
-      padding: 15px 30px;
-      font-size: 24px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    }
-
-    .start-button:hover {
-      background-color: #ff4500;
-      transform: scale(1.1);
-      box-shadow: 0 0 100px rgba(255, 152, 0, 1);
-    }
-
-    .creator-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 10px 0;
-      text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8);
-    }
-
-    .creator-list li {
-      font-size: 24px;
-    }
-
-    p {
-      font-size: 24px;
-    }
-
-    #creators-title {
-      font-size: 25px;
-    }
-
-    #ravriv-name {
-      font-size: 20px;
-    }
-
-    #jasonlaubb-name {
-      font-size: 16px;
-    }
+   .start-button:hover {
+    background-color: #ff4500;
+    transform: scale(1.1);
+    box-shadow: 0 0 100px rgba(255, 152, 0, 1);
+   }
   </style>
-</head>
-
-<body>
+ </head>
+ <body>
   <div class="menu">
-    <h1>Sneaky Game</h1>
-    <button class="start-button">Start</button>
-    <p id="creators-title">CREATORS</p>
-    <ul class="creator-list">
-      <li id="ravriv-name">ravriv</li>
-      <li id="jasonlaubb-name">jasonlaubb</li>
-    </ul>
+   <h1>Sneaky Game</h1>
+   <button class="start-button">Start</button>
   </div>
-
   <script type="text/javascript">
-    const startButton = document.querySelector(".start-button");
-    const startSound = new Audio("sounds/start.ogg");
-
-    startButton.addEventListener("click", () => {
-      startSound.play();
-      setTimeout(() => {
-        window.location.href = "game.html";
-      }, startSound.duration * 1000);
-    });
+   const startButton = document.querySelector(".start-button");
+   const startSound = new Audio("sounds/start.ogg");
+   startButton.addEventListener("click", () => {
+    startSound.play();
+    setTimeout(() => {
+     window.location.href = "game.html";
+    }, startSound.duration * 1000);
+   });
   </script>
-</body>
-
+ </body>
 </html>
