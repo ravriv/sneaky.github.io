@@ -95,12 +95,14 @@ let xDown = null;
 let yDown = null;
 
 function touchStart(event) {
+  event.preventDefault();
   const firstTouch = event.touches[0];
   xDown = firstTouch.clientX;
   yDown = firstTouch.clientY;
 }
 
 function touchMove(event) {
+  event.preventDefault();
   if (!xDown || !yDown) {
     return;
   }
