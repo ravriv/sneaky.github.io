@@ -1,97 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+
+<head>
   <title>Sneaky Game</title>
   <style>
-   body {
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-   }
-
-   .menu {
-    max-width: 600px;
-    background-color: #333;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-   }
-
-   h1 {
-    font-size: 64px;
-    margin-bottom: 20px;
-    animation: glowing 2s infinite;
-   }
-
-   @keyframes glowing {
-    0% {
-     text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    body {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    50% {
-     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    }
-
-    100% {
-     text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
-    }
-   }
-
-   .play-button {
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-   }
-
-   .play-button:hover {
-    background-color: #ff4500;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 152, 0, 1);
-   }
-
-   @media (max-width: 768px) {
     .menu {
-     padding: 20px;
+      max-width: 600px;
+      background-color: #333;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
 
     h1 {
-     font-size: 48px;
+      font-size: 64px;
+      margin-bottom: 20px;
+      animation: glowing 2s infinite;
+    }
+
+    @keyframes glowing {
+      0% {
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+      }
+
+      50% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      }
+
+      100% {
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+      }
     }
 
     .play-button {
-     font-size: 18px;
-     padding: 10px 20px;
+      background-color: #ff6600;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 24px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .play-button:hover {
+      background-color: #ff4500;
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255, 152, 0, 1);
+    }
+
+    @media only screen and (max-width: 600px) {
+      .menu {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .play-button {
+        padding: 10px 20px;
+        font-size: 18px;
       }
     }
-    
   </style>
- </head>
- <body>
+</head>
+
+<body>
   <div class="menu">
-   <h1>Sneaky Game</h1>
-   <button class="play-button">Play</button>
+    <h1>Sneaky Game</h1>
+    <button class="play-button">Play</button>
   </div>
   <script type="text/javascript">
-   const playButton = document.querySelector(".play-button");
-   const startSound = new Audio("sounds/start.ogg");
-   playButton.addEventListener("click", () => {
-    startSound.play();
-    setTimeout(() => {
-     window.location.href = "game.html";
-    }, startSound.duration * 1000);
-   });
+    const playButton = document.querySelector(".play-button");
+    const startSound = new Audio("sounds/start.ogg");
+    playButton.addEventListener("click", () => {
+      startSound.play();
+      setTimeout(() => {
+        window.location.href = "game.html";
+      }, startSound.duration * 1000);
+    });
   </script>
- </body>
+</body>
+
 </html>
