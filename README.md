@@ -4,9 +4,9 @@
 ---
 
 ## How to Play
-► *Press the arrow keys on your keyboard to move the snake on PC.*
+► *Press the directional keys on your keyboard to move the snake on PC.*
 
-► *Press the arrow keys on the screen to move the snake on mobile.*
+► *Swipe the screen to move the snake on mobile.*
 
 ► *Don't eat the snake's body, or you will lose the game!*
 
