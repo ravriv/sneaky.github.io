@@ -40,9 +40,12 @@ body::after {
 
 canvas {
     position: relative;
+    top: 40px;
     border: 4px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     background-color: black;
+    width: 100;
+    height: 100;
 }
 
 canvas::before,
@@ -57,34 +60,11 @@ canvas::after {
     z-index: -1;
 }
 
-.arrow-buttons {
-    margin-top: 10px;
-}
-
-.arrow-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-}
-
-.arrow-button:hover {
-    transform: scale(1.1);
-    animation: grayGlow 1s infinite;
-}
-
-@keyframes grayGlow {
-
-    0%,
-    100% {
-        box-shadow: 0 0 5px rgba(192, 192, 192, 0.5);
-    }
-
-    50% {
-        box-shadow: 0 0 20px rgba(192, 192, 192, 0.9);
+@media (max-width: 768px) {
+    canvas {
+        top: 20px;
+        width: 90%;
+        height: 90%;
     }
 }
 
