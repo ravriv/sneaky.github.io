@@ -20,7 +20,7 @@ let gameover = false;
 let endgame = false;
 let eaten = true;
 let score = 0;
-const maxscore = 400;
+const maxscore = 419;
 
 function getRandomPosition(exclude) {
   let x, y;
@@ -76,11 +76,6 @@ function buttonClick(direction) {
   lastDirection = direction;
 }
 
-document.getElementById('up').addEventListener('click', () => buttonClick('up'));
-document.getElementById('down').addEventListener('click', () => buttonClick('down'));
-document.getElementById('left').addEventListener('click', () => buttonClick('left'));
-document.getElementById('right').addEventListener('click', () => buttonClick('right'));
-
 document.addEventListener('keydown', (event) => {
   if (event.code === 'ArrowUp') {
     buttonClick('up');
@@ -92,6 +87,47 @@ document.addEventListener('keydown', (event) => {
     buttonClick('right');
   }
 });
+
+canvas.addEventListener('touchstart', touchStart, false);
+canvas.addEventListener('touchmove', touchMove, false);
+
+let xDown = null;
+let yDown = null;
+
+function touchStart(event) {
+  const firstTouch = event.touches[0];
+  xDown = firstTouch.clientX;
+  yDown = firstTouch.clientY;
+}
+
+function touchMove(event) {
+  if (!xDown || !yDown) {
+    return;
+  }
+
+  const xUp = event.touches[0].clientX;
+  const yUp = event.touches[0].clientY;
+
+  const xDiff = xDown - xUp;
+  const yDiff = yDown - yUp;
+
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    if (xDiff > 0) {
+      buttonClick('left');
+    } else {
+      buttonClick('right');
+    }
+  } else {
+    if (yDiff > 0) {
+      buttonClick('up');
+    } else {
+      buttonClick('down');
+    }
+  }
+
+  xDown = null;
+  yDown = null;
+}
 
 function checkCollision() {
   if (
