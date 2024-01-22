@@ -62,7 +62,7 @@ canvas::after {
 
 @media (max-width: 768px) {
     canvas {
-        top: 20px;
+        top: 40px;
         width: 90%;
         height: 90%;
     }
