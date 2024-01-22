@@ -10,7 +10,7 @@ const winnerbutton = document.getElementById("winner-prize");
 const snake = {
   head: { x: 10, y: 10 },
   body: [],
-  length: 1,
+  length: 3,
 };
 
 let apple = { x: 5, y: 5 };
@@ -20,7 +20,7 @@ let gameover = false;
 let endgame = false;
 let eaten = true;
 let score = 0;
-const maxscore = 419;
+const maxscore = 417;
 
 function getRandomPosition(exclude) {
   let x, y;
